@@ -34,3 +34,6 @@
 [submodule "bundle/vim-numbertoggle"]
 	path = bundle/vim-numbertoggle
 	url = git://github.com/jeffkreeftmeijer/vim-numbertoggle.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = ../../scrooloose/syntastic
