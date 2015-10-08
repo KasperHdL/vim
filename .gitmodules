@@ -40,3 +40,9 @@
 [submodule "bundle/multiple-cursors"]
 	path = bundle/multiple-cursors
 	url = ../../terryma/vim-multiple-cursors
+[submodule "bundle/rainbow_parentheses.vim"]
+	path = bundle/rainbow_parentheses.vim
+	url = ../../kien/rainbow_parentheses.vim
+[submodule "bundle/vim-easymotion"]
+	path = bundle/vim-easymotion
+	url = ../../easymotion/vim-easymotion

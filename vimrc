@@ -29,6 +29,12 @@ let g:bufferline_show_bufnr = 1
 "Nerdtree
 nmap <F7> :NERDTreeToggle<CR>
 
+"Rainbow Parenthesis
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 "Single-Lines
 set relativenumber
 set tabstop=4
@@ -37,6 +43,7 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set hidden
+
 
 "Syntastic Recommended
 set statusline+=%#warningmsg#
@@ -55,6 +62,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k	
 map <C-l> <C-w>l	
 
+let mapleader="\<Space>"
 inoremap jk <ESC>
 
 "Auto-Reload Vimrc
