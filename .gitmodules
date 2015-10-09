@@ -46,3 +46,6 @@
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
 	url = ../../easymotion/vim-easymotion
+[submodule "bundle/vaxe"]
+	path = bundle/vaxe
+	url = ../../jdonaldson/vaxe
