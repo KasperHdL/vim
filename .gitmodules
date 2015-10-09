@@ -49,3 +49,6 @@
 [submodule "bundle/vaxe"]
 	path = bundle/vaxe
 	url = ../../jdonaldson/vaxe
+[submodule "bundle/open-browser.vim"]
+	path = bundle/open-browser.vim
+	url = ../../tyru/open-browser.vim
