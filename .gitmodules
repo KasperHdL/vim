@@ -55,3 +55,6 @@
 [submodule "bundle/ag.vim"]
 	path = bundle/ag.vim
 	url = ../../rking/ag.vim
+[submodule "bundle/open_file_under_cursor.vim"]
+	path = bundle/open_file_under_cursor.vim
+	url = ../../amix/open_file_under_cursor.vim
