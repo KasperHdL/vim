@@ -2,11 +2,6 @@
 "   by KasperHdL
 "
 "
-"
-"
-"
-"
-"
 """"""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""
@@ -19,8 +14,7 @@ endif
 
 " @TODO to be categorized
 
-set ttyfast                     " faster redraw
-
+set ttyfast
 """""""""""""""""""
 " => Launch Config 
 """""""""""""""""""
@@ -47,22 +41,22 @@ let g:jellybeans_use_lowcolor_black = 0
 
 " === Rainbow Parenthesis ===
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['red',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
+    \ ['brown'            , 'RoyalBlue3'  ] ,
+    \ ['Darkblue'         , 'SeaGreen3'   ] ,
+    \ ['darkgray'         , 'DarkOrchid3' ] ,
+    \ ['darkgreen'        , 'firebrick3'  ] ,
+    \ ['darkcyan'         , 'RoyalBlue3'  ] ,
+    \ ['darkred'          , 'SeaGreen3'   ] ,
+    \ ['darkmagenta'      , 'DarkOrchid3' ] ,
+    \ ['brown'            , 'firebrick3'  ] ,
+    \ ['gray'             , 'RoyalBlue3'  ] ,
+    \ ['red'              , 'SeaGreen3'   ] ,
+    \ ['darkmagenta'      , 'DarkOrchid3' ] ,
+    \ ['Darkblue'         , 'firebrick3'  ] ,
+    \ ['darkgreen'        , 'RoyalBlue3'  ] ,
+    \ ['darkcyan'         , 'SeaGreen3'   ] ,
+    \ ['darkred'          , 'DarkOrchid3' ] ,
+    \ ['red'              , 'firebrick3'  ] ,
     \ ]
 
 """"""""""""""""""""""""
@@ -142,10 +136,10 @@ nnoremap <Leader>t :Tabularize /
 vnoremap <Leader>t :Tabularize /
 
 " === Plugin ===
-nnoremap <F7> :NERDTreeToggle<CR> 	" toggle NERDTree
-nnoremap <F8> :TagbarToggle<CR>   	" toggle Tagbar
-nnoremap <leader>a :Ag 		" Run Ag
-inoremap jk <ESC>		" exit INSERT mode
+nnoremap <F7> :NERDTreeToggle<CR> 
+nnoremap <F8> :TagbarToggle<CR>  
+nnoremap <leader>a :Ag
+inoremap jk <ESC>
 
 " === Window Management ===	" Switch Focus with cursor motion keys
 map <C-h> <C-w>h		
@@ -156,6 +150,7 @@ map <C-l> <C-w>l
 " Move a line of text using ALT+[jk] or Cmd+[jk]
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
+
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z 
 
@@ -165,8 +160,6 @@ if has("mac") || has("macunix")
     vmap <D-j> <M-j>
     vmap <D-k> <M-k>
 endif
-
-
 
 
 """""""""""""""""""""
@@ -188,12 +181,19 @@ au Syntax * RainbowParenthesesLoadBraces
 """""""""""""""""""""
 " => CtrlP 
 """""""""""""""""""""
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_user_command = 'ag %s -l --hidden -g ""'
+
+"ignore file
+"does not work
+"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.meta/*        " Linux/MacOSX
+
+
 " }}}
 
 """""""""""""""""""""
 " => Syntastic 
 """""""""""""""""""""
+"let syntastac ignore file types
 let g:syntastic_ignore_files = ['.java$']
 "@TODO learn what these does..
 set statusline+=%#warningmsg#
@@ -219,6 +219,18 @@ set viminfo^=%
 
 
 
+
+""""""""""""""""""""""""""
+" => Work around for Gnome-terminal and Meta/Alt Key
+"""""""""""""""""""""""""
+let c='a'
+while c <= 'z'
+    exec "set <A-".c.">=\e".c
+    exec "imap \e".c." <A-".c.">"
+    let c = nr2char(1+char2nr(c))
+endw
+
+set timeout ttimeoutlen=50
 
 """"""""""""""""""""""""""
 " => Auto-Reload Vimrc 
