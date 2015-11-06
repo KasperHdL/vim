@@ -20,3 +20,7 @@ in ~/.bashrc
 
 Symlink vimrc:
 `ln -s /path/to/file /path/to/symlink`
+
+init submodules:
+`git submodule update --init --recursive`
+
