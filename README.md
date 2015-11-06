@@ -24,3 +24,9 @@ Symlink vimrc:
 init submodules:
 `git submodule update --init --recursive`
 
+install silver surfer for ag
+`apt-get install silversearcher-ag`
+
+install ctags
+`apt-get install ctags`
+
