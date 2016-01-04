@@ -55,3 +55,6 @@
 [submodule "bundle/open_file_under_cursor.vim"]
 	path = bundle/open_file_under_cursor.vim
 	url = ../../amix/open_file_under_cursor.vim
+[submodule "bundle/rainbow_parentheses.vim"]
+	path = bundle/rainbow_parentheses.vim
+	url = https://github.com/eapache/rainbow_parentheses.vim
