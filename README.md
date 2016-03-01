@@ -13,7 +13,7 @@ init submodules:
 
 
 
-
+#Extra:
 Set Terminal to 256 colors if not already 
 
 in ~/.bashrc
