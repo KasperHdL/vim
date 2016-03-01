@@ -1,11 +1,21 @@
 # vim
 my personal vim settings [completely new to vim would not recommend to anyone]
 
+install the_silver_searcher and ctags and vim
 
-Install vim
+clone repo and rename to .vim
 
-Set Terminal to 256 colors 
+Symlink vimrc:
+`ln -s ~/.vim/vimrc ~/.vimrc`
 
+init submodules:
+`git submodule update --init --recursive`
+
+
+
+
+Set Terminal to 256 colors if not already 
+
 in ~/.bashrc
 
 
@@ -16,17 +26,3 @@ in ~/.bashrc
 `    TERM="${TERM}-256color" ;`
 
 `esac`
-
-
-Symlink vimrc:
-`ln -s /path/to/file /path/to/symlink`
-
-init submodules:
-`git submodule update --init --recursive`
-
-install silver surfer for ag
-`apt-get install silversearcher-ag`
-
-install ctags
-`apt-get install ctags`
-
