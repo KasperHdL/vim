@@ -163,12 +163,15 @@ au Syntax * RainbowParenthesesLoadBraces
 """""""""""""""""""""
 let g:ctrlp_user_command = 'ag %s -l --hidden -g ""'
 
-"ignore file
-"does not work
-"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.meta/*        " Linux/MacOSX
+set wildignore+=*/tmp/*,*/docs/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*\\docs\\*,*.swp,*.zip,*.exe  " Windows
 
-
-" }}}
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 """""""""""""""""""""
 " => Syntastic 
@@ -196,8 +199,6 @@ autocmd BufReadPost *
      \ endif
 " Remember info about open buffers on close
 set viminfo^=%
-
-
 
 
 """"""""""""""""""""""""""
