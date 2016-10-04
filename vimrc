@@ -67,6 +67,21 @@ catch
 endtry
 
 
+""""""""""""""
+" Make!
+""""""""""""""
+let &makeprg = 'cd bin && cmake .. && make && ./$*'
+
+
+""""""""""""""""""""""
+" => Multiple Cursors
+""""""""""""""""""""""
+
+let g:multi_cursor_next_key='<C-,>'
+let g:multi_cursor_prev_key='<C-.>'
+let g:multi_cursor_skip_key='<C-m>'
+let g:multi_cursor_quit_key='<Esc>'
+
 
 """""""""""""""""""""""""
 " => UI Layout 
@@ -105,8 +120,6 @@ set foldlevelstart=10   " start with fold level of 1
 let mapleader="\<Space>"
 let g:mapleader="\<Space>"
 
-noremap , /
-noremap <C-,> ?
 
 " remap 0 to the first blank character in the line
 map 0 ^
