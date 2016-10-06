@@ -64,3 +64,6 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule "bundle/gitignore"]
+	path = bundle/gitignore
+	url = https://github.com/vim-scripts/gitignore
