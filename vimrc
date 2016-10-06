@@ -23,21 +23,23 @@ execute pathogen#infect()
 execute pathogen#helptags()
 set encoding=utf-8
 
-"No backup n stuff ..
+"No backup n stuff and swaps
 set nobackup
 set nowb
 set noswapfile
 
 "reads the file automatically if it has been changed outside
 set autoread
+"hide buffers
 set hidden
 
 """""""""""""""""""
 " => Colors 
 """""""""""""""""""
 syntax on
-color jellybeans
+colors jellybeans
 let g:jellybeans_use_lowcolor_black = 0
+
 
 """"""""""""""""""""""""
 " => Spaces & Tabs 
@@ -53,12 +55,13 @@ set autoindent
 
 
 " Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
-
+" @Note does not seem to be working
+" map <leader>tn :tabnew<cr>
+" map <leader>to :tabonly<cr>
+" map <leader>tc :tabclose<cr>
+" map <leader>tm :tabmove 
+" map <leader>t<leader> :tabnext 
+ 
 " Specify the behavior when switching between buffers 
 try
     set switchbuf=useopen,usetab,newtab
@@ -116,7 +119,7 @@ set foldlevelstart=10   " start with fold level of 1
 """"""""""""""""""""
 " => Shortcuts 
 """""""""""""""""""
-" === Leader ===
+" === leader ===
 let mapleader="\<Space>"
 let g:mapleader="\<Space>"
 
@@ -124,14 +127,27 @@ let g:mapleader="\<Space>"
 " remap 0 to the first blank character in the line
 map 0 ^
 
-nnoremap <Leader>, :nohlsearch<CR>
+"nnoremap <leader>, :nohlsearch<CR>
 nnoremap <Leader>t :Tabularize /
 vnoremap <Leader>t :Tabularize /
+
+" Save quickly
+nnoremap <Leader>w :w<CR>
+
+"Copy & Paste to system clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+
 
 " === Plugin ===
 nnoremap <F7> :NERDTreeToggle<CR> 
 nnoremap <F8> :TagbarToggle<CR>  
-nnoremap <leader>a :Ag
+nnoremap <Leader>a :Ag
 inoremap jk <ESC>
 
 " === Window Management ===	" Switch Focus with cursor motion keys
@@ -141,11 +157,11 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Move a line of text using ALT+[jk] or Cmd+[jk]
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
+nnoremap <Leader>j mz:m+<cr>`z
+nnoremap <Leader>k mz:m-2<cr>`z
 
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z 
+vnoremap <Leader>j :m'>+<cr>`<my`>mzgv`yo`z
+vnoremap <Leader>k :m'<-2<cr>`>my`<mzgv`yo`z 
 
 if has("mac") || has("macunix")
     nmap <D-j> <M-j>
