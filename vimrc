@@ -75,15 +75,28 @@ endtry
 """"""""""""""
 let &makeprg = 'cd bin && cmake .. && make && ./$*'
 
+command! -nargs=* SetMake write | let g:make_args="<args>" | make <args> | cwindow 6
+function! Make2()
+  if !exists("g:make_args")
+    let g:make_args = ""
+  endif
+  wall
+  exec "silent! make " . g:make_args
+  cwindow 6
+  redraw
+endfunction
+inoremap <F5> <ESC>:call Make2()<CR><C-L>
+nnoremap <F5> :call Make2()<CR><C-L>
+
 
 """"""""""""""""""""""
 " => Multiple Cursors
 """"""""""""""""""""""
 
-let g:multi_cursor_next_key='<C-,>'
-let g:multi_cursor_prev_key='<C-.>'
-let g:multi_cursor_skip_key='<C-m>'
-let g:multi_cursor_quit_key='<Esc>'
+"let multi_cursor_next_key='<leader>,'
+"let multi_cursor_prev_key='<leader>.'
+"let multi_cursor_skip_key='<leader>/'
+"let multi_cursor_quit_key='<Esc>'
 
 
 """""""""""""""""""""""""
