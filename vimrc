@@ -55,16 +55,15 @@ set autoindent
 
 
 " Useful mappings for managing tabs
-" @Note does not seem to be working
-" map <leader>tn :tabnew<cr>
-" map <leader>to :tabonly<cr>
-" map <leader>tc :tabclose<cr>
-" map <leader>tm :tabmove 
-" map <leader>t<leader> :tabnext 
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+map <leader>t<leader> :tabnext<cr>
  
 " Specify the behavior when switching between buffers 
 try
-    set switchbuf=useopen,usetab,newtab
+    set switchbuf=useopen,usetab
     set stal=2
 catch
 endtry
@@ -214,6 +213,21 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
+
+" git CtrlP search
+
+let g:ctrlp_use_caching = 0
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+  let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+    \ }
+endif
+
 
 """""""""""""""""""""
 " => Syntastic 
