@@ -54,12 +54,21 @@ filetype plugin on
 set autoindent
 
 
+""""""""""""""""""""
+" => Shortcuts 
+"""""""""""""""""""
+" === leader ===
+let mapleader="\<Space>"
+let g:mapleader="\<Space>"
+
+
+
 " Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext<cr>
+map <Leader>tn :tabnew<cr>
+map <Leader>to :tabonly<cr>
+map <Leader>tc :tabclose<cr>
+map <Leader>tm :tabmove 
+map <Leader>t<Leader> :tabnext<cr>
  
 " Specify the behavior when switching between buffers 
 try
@@ -88,7 +97,15 @@ inoremap <F5> <ESC>:call Make2()<CR><C-L>
 nnoremap <F5> :call Make2()<CR><C-L>
 
 
+
 """"""""""""""""""""""
+" => You Complete Me
+""""""""""""""""""""""
+nnoremap <Leader>g :YcmCompleter GoTo<cr>
+nnoremap <Leader>f :YcmComgleter FixIt<cr> 
+nnoremap <Leader>s :FSHere<cr>
+
+"""""""""""""""""""""
 " => Multiple Cursors
 """"""""""""""""""""""
 
@@ -128,20 +145,12 @@ set foldenable          " don't fold files by default on open
 set foldlevelstart=10   " start with fold level of 1
 
 
-""""""""""""""""""""
-" => Shortcuts 
-"""""""""""""""""""
-" === leader ===
-let mapleader="\<Space>"
-let g:mapleader="\<Space>"
-
-
 " remap 0 to the first blank character in the line
 map 0 ^
 
 "nnoremap <leader>, :nohlsearch<CR>
-nnoremap <Leader>t :Tabularize /
-vnoremap <Leader>t :Tabularize /
+nnoremap <Leader><Leader>t :Tabularize /
+vnoremap <Leader><Leader>t :Tabularize /
 
 " Save quickly
 nnoremap <Leader>w :w<CR>
