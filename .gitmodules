@@ -73,3 +73,6 @@
 [submodule "bundle/bundle/auto-pairs"]
 	path = bundle/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+[submodule "bundle/vim-fswitch"]
+	path = bundle/vim-fswitch
+	url = https://github.com/derekwyatt/vim-fswitch
