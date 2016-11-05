@@ -102,7 +102,7 @@ nnoremap <F5> :call Make2()<CR><C-L>
 " => You Complete Me
 """"""""""""""""""""""
 nnoremap <Leader>g :YcmCompleter GoTo<cr>
-nnoremap <Leader>f :YcmComgleter FixIt<cr> 
+nnoremap <Leader>f :YcmCompleter FixIt<cr> 
 nnoremap <Leader>s :FSHere<cr>
 
 """""""""""""""""""""
