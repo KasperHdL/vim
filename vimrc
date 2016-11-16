@@ -69,7 +69,12 @@ map <Leader>to :tabonly<cr>
 map <Leader>tc :tabclose<cr>
 map <Leader>tm :tabmove 
 map <Leader>t<Leader> :tabnext<cr>
- 
+
+map <Leader>l :bn<cr>
+map <Leader>h :bp<cr>
+map <Leader>c :bd<cr>
+
+
 " Specify the behavior when switching between buffers 
 try
     set switchbuf=useopen,usetab
