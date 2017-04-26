@@ -62,6 +62,9 @@ let mapleader="\<Space>"
 let g:mapleader="\<Space>"
 
 
+""""
+" Do not set any mapping for GitGutter
+let g:gitgutter_map_keys = 0
 
 " Useful mappings for managing tabs
 map <Leader>tn :tabnew<cr>
@@ -70,9 +73,10 @@ map <Leader>tc :tabclose<cr>
 map <Leader>tm :tabmove 
 map <Leader>t<Leader> :tabnext<cr>
 
-map <Leader>l :bn<cr>
-map <Leader>h :bp<cr>
-map <Leader>c :bd<cr>
+
+nnoremap <Leader>l :bn<cr>
+nnoremap <Leader>h :bp<cr>
+nnoremap <Leader>c :bd<cr>
 
 
 " Specify the behavior when switching between buffers 
@@ -100,7 +104,6 @@ function! Make2()
 endfunction
 inoremap <F5> <ESC>:call Make2()<CR><C-L>
 nnoremap <F5> :call Make2()<CR><C-L>
-
 
 
 """"""""""""""""""""""
@@ -173,7 +176,6 @@ vmap <Leader>P "+P
 " === Plugin ===
 nnoremap <F7> :NERDTreeToggle<CR> 
 nnoremap <F8> :TagbarToggle<CR>  
-nnoremap <Leader>a :Ag
 inoremap jk <ESC>
 
 " === Window Management ===	" Switch Focus with cursor motion keys
@@ -236,8 +238,8 @@ if executable('ag')
 
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 else
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-  let g:ctrlp_prompt_mappings = {
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+    let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
     \ }
 endif
